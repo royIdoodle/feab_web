@@ -20,6 +20,7 @@ $('document').ready(function(){
                 isWcShare: false,
                 isAppShare: false,
                 itemList:[],
+                downloadLink:'',
                 listCom:[]
             },
             watch: {
@@ -70,7 +71,26 @@ $('document').ready(function(){
                     console.log('--------submit---------');
                     console.log(o);
                     console.log('--------submit---------');
-                    $.get('http://10.13.1.49:8082/make', {options: o})
+                    $.ajax({
+                        url: 'http://10.13.1.49:8082/make',
+                        method: 'GET',
+                        data: {options:o},
+                        success: function(data){
+                            console.log('http://10.13.1.49:8082/download?fileName='+data.fileName);
+                            that.$data.downloadLink = 'http://10.13.1.49:8082/download?fileName='+data.fileName;
+                            setTimeout(function(){
+                                window.open('http://10.13.1.49:8082/download?fileName='+data.fileName)
+
+                            },500)
+                            //history.replaceState(false, document.title,'http://10.13.1.49:8082/download?fileName='+data.fileName)
+                        }
+                    });
+                    //$.get('http://10.13.1.49:8082/make', {options: o}, function(fileName){
+                    //    debugger
+                    //    if(fileName){
+                    //        history.replaceState('http://10.13.1.49:8082/download?fileName='+fileName)
+                    //    }
+                    //})
                 }
             }
         })

@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <label for="selector1" class="col-sm-2 control-label">文件路径</label>
                                 <div class="col-sm-8">
                                     <select name="selector1" id="selector1" class="form-control1" v-model="filePath">
-                                        <option v-for="item in fileList" v-text="item">/product</option>
+                                        <option v-for="item in fileList" v-text="item"></option>
                                     </select>
                                 </div>
                             </div>
@@ -239,7 +239,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="row">
                                 <div class="col-sm-8 col-sm-offset-2">
                                     <button class="btn-success btn" v-on:click="submit">提交</button>
+                                    <a v-show="downloadLink.length" href="{{downloadLink}}" class="btn-default btn">下载</a>
                                 </div>
+                            </div>
+                            <div class="row" v-show="true">
+
                             </div>
                         </div>
                     </form>
