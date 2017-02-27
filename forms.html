@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Feab, Front-End Auto Build,前端代码自动构建</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Easy Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <link href="css/bootstrap-tokenfield.min.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <!-- Graph CSS -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="css/icon-font.min.css" type='text/css'/>
+    <!-- //lined-icons -->
+    <!-- chart -->
+    <script src="js/Chart.js"></script>
+    <!-- //chart -->
+    <!--animate-->
+    <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--//end-animate-->
+    <!----webfonts--->
+    <!--<link href='http://fonts.useso.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic'-->
+          <!--rel='stylesheet' type='text/css'>-->
+    <!---//webfonts--->
+    <!-- Meters graphs -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/bootstrap-tokenfield.min.js"></script>
+    <!-- Placed js at the end of the document so the pages load faster -->
+
+</head>
+
+<body class="sticky-header left-side-collapsed" onload="">
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <h1><a href="index.html">天狗<span>FE</span></a></h1>
+        </div>
+        <div class="logo-icon text-center">
+            <a href="index.html"><i class="lnr lnr-home"></i> </a>
+        </div>
+
+        <!--logo and iconic logo end-->
+        <div class="left-side-inner">
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
+                <li class="menu-list">
+                    <a href="#"><i class="lnr lnr-cog"></i>
+                        <span>Components</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="grids.html">Grids</a></li>
+                        <li><a href="widgets.html">Widgets</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
+                <li><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>
+                <li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="inbox.html">Inbox</a></li>
+                        <li><a href="compose-mail.html">Compose Mail</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i> <span>Menu Levels</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="charts.html">Basic Charts</a></li>
+                    </ul>
+                </li>
+                <li><a href="codes.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
+                <li><a href="media.html"><i class="lnr lnr-select"></i> <span>Media Css</span></a></li>
+                <li class="menu-list"><a href="#"><i class="lnr lnr-book"></i> <span>Pages</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="sign-in.html">Sign In</a></li>
+                        <li><a href="sign-up.html">Sign Up</a></li>
+                        <li><a href="blank_page.html">Blank Page</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content">
+        <!-- header-starts -->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+            <!--notification menu start -->
+
+            <!--notification menu end -->
+        </div>
+        <!-- //header-ends -->
+        <div id="page-wrapper">
+            <div class="graphs">
+                <h3 class="blank1">Feab，代码自动生成工具</h3>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="horizontal-form">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="focusedinput" class="col-sm-2 control-label">头部标题</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" v-model="title" placeholder="汉字">
+                                </div>
+                                <div class="col-sm-2 jlkdfj1">
+                                    <p class="help-block">例：订单确认</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="focusedinput" class="col-sm-2 control-label">文件名</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" v-model="fileName" placeholder="文件名，无需后缀">
+                                </div>
+                                <div class="col-sm-2 jlkdfj1">
+                                    <p class="help-block" v-text="fileNameSuggest">例：listing</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="selector1" class="col-sm-2 control-label">文件路径</label>
+                                <div class="col-sm-8">
+                                    <select name="selector1" id="selector1" class="form-control1" v-model="filePath">
+                                        <option v-for="item in fileList" v-text="item">/product</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="focusedinput" class="col-sm-2 control-label">中间件路径</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" id="focusedinput" v-model="midway"
+                                           placeholder="相对路径，无需host">
+                                </div>
+                                <div class="col-sm-2 jlkdfj1">
+                                    <p class="help-block">例：/fittingShow/index/init.node</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkbox" class="col-sm-2 control-label">参数选择</label>
+                                <div class="col-sm-8">
+                                    <div class="checkbox-inline1"><label><input type="checkbox" v-model="isWcShare"> 微信分享</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkbox" class="col-sm-2 control-label">头部设置</label>
+                                <div class="col-sm-8">
+                                    <div class="checkbox-inline1">
+                                        <label><input type="checkbox" checked=""> 左侧 后退按钮</label>
+                                    </div>
+                                    <div class="checkbox-inline1">
+                                        <label><input type="checkbox" checked=""> 右侧 消息按钮</label>
+                                        <label><input type="checkbox" checked=""> 右侧 More</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="checkbox" class="col-sm-2 control-label">More菜单定制</label>
+                                <div class="col-sm-8">
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="1" value="message" v-model="itemList"> 消息</label>
+                                    </div>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="2" value="index" v-model="itemList"> 首页</label>
+                                    </div>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="3" value="mine" v-model="itemList"> 我的</label>
+                                    </div>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="4" value="fitting" v-model="itemList"> 试衣秀</label>
+                                    </div>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="5" value="tipOff" v-model="itemList"> 举报</label>
+                                    </div>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="6" value="share" v-model="itemList"> 分享</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">添加普通组件（多选）</label>
+                                <div class="col-sm-8">
+                                    <select multiple="multiple" class="form-control1" v-model="comp" size="5" multiple>
+                                        <option v-for="item in componentList" v-text="item"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="focusedinput" class="col-sm-2 control-label">列表组件</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="tokenfield" value="" v-model="listCom" placeholder="可以用tab键或逗号来追加多个组件名"/>
+                                    <script>
+                                        $('#tokenfield').tokenfield({
+                                            /*autocomplete: {
+                                             source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
+                                             delay: 100
+                                             },
+                                             showAutocompleteOnFocus: true*/
+                                        })
+                                    </script>
+                                </div>
+                                <div class="col-sm-2 jlkdfj1">
+                                    <p class="help-block">例：searchItem,fittingItem</p>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="bs-example" data-example-id="form-validation-states">
+
+                </div>
+
+                <div class="bs-example">
+                    <form>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <button class="btn-success btn" v-on:click="submit">提交</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer section start-->
+    <footer>
+        <p>Copyright &copy; 2017.Company name All rights reserved.More Tools <a href="http://node.51tiangou.com/"
+                                                                                    target="_blank"
+                                                                                    title="模板之家">前端工具合集</a> - Design by
+            <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">天狗FE</a>
+        </p>
+    </footer>
+    <!--footer section end-->
+</section>
+<script src="js/MD5.js"></script>
+
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
