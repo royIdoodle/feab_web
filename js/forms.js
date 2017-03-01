@@ -26,7 +26,11 @@ $('document').ready(function(){
             watch: {
                 itemList: function(e){
 
-
+                },
+                filePath: function(val){
+                    if(!this.$data.midway){
+                        this.$data.midway = '/' + val + '/' + this.$data.fileName + '/init.node';
+                    }
                 },
                 title: function(val){
                     var that = this;
@@ -85,12 +89,6 @@ $('document').ready(function(){
                             //history.replaceState(false, document.title,'http://10.13.1.49:8082/download?fileName='+data.fileName)
                         }
                     });
-                    //$.get('http://10.13.1.49:8082/make', {options: o}, function(fileName){
-                    //    debugger
-                    //    if(fileName){
-                    //        history.replaceState('http://10.13.1.49:8082/download?fileName='+fileName)
-                    //    }
-                    //})
                 }
             }
         })
