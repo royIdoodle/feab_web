@@ -20,17 +20,22 @@ $('document').ready(function(){
             fileNameSuggest: FILE_NAME_SUGGEST,
             filePath: '',
             midway: '',
-            comp :'',
+            comp :'head',
             isWcShare: false,
             isAppShare: false,
-            itemList:[],
+            topRightOutBtn:['menuControl'],    //右上角外露按钮列表
+            topRightInBtn:['message','index'],
             downloadLink:'',
-            listCom:[]
+            listCom:[]          //列表组件
         },
         watch: {
-            itemList: function(e){
+            topRightInBtn: function(e){
 
-
+            },
+            filePath: function(val){
+                if(!this.$data.midway){
+                    this.$data.midway = '/' + val + '/' + this.$data.fileName + '/init.node';
+                }
             },
             title: function(val){
                 var that = this;
@@ -70,7 +75,8 @@ $('document').ready(function(){
                     isAppShare: that.$data.isAppShare,
                     comp: that.$data.comp,
                     listCom: that.$data.listCom,
-                    itemList: that.$data.itemList
+                    topRightOutBtn: that.$data.topRightOutBtn,
+                    topRightInBtn: that.$data.topRightInBtn
                 };
                 console.log('--------submit---------');
                 console.log(o);
@@ -80,21 +86,12 @@ $('document').ready(function(){
                     method: 'GET',
                     data: {options:o},
                     success: function(data){
-                        console.log('http://10.13.1.49:8082/download?fileName='+data.fileName);
                         that.$data.downloadLink = 'http://10.13.1.49:8082/download?fileName='+data.fileName;
                         setTimeout(function(){
                             window.open('http://10.13.1.49:8082/download?fileName='+data.fileName)
-
                         },500)
-                        //history.replaceState(false, document.title,'http://10.13.1.49:8082/download?fileName='+data.fileName)
                     }
                 });
-                //$.get('http://10.13.1.49:8082/make', {options: o}, function(fileName){
-                //    debugger
-                //    if(fileName){
-                //        history.replaceState('http://10.13.1.49:8082/download?fileName='+fileName)
-                //    }
-                //})
             },
             addPhoneModel:function(e){
                 var len=this.customModels.length;

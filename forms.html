@@ -172,8 +172,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <label><input type="checkbox" checked=""> 左侧 后退按钮</label>
                                     </div>
                                     <div class="checkbox-inline1">
-                                        <label><input type="checkbox" checked=""> 右侧 消息按钮</label>
-                                        <label><input type="checkbox" checked=""> 右侧 More</label>
+                                        <label><input type="checkbox" value="shoppingCart" v-model="topRightOutBtn"> 右侧 消息按钮</label>
+                                        <label><input type="checkbox" value="menuControl" v-model="topRightOutBtn"> 右侧 More</label>
                                     </div>
                                 </div>
                             </div>
@@ -181,17 +181,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="form-group">
                                 <label for="checkbox" class="col-sm-2 control-label">More菜单定制</label>
                                 <div class="col-sm-8">
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="1" value="message" v-model="itemList"> 消息</label>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="1" value="message" v-model="topRightInBtn"> 消息</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="2" value="index" v-model="itemList"> 首页</label>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="2" value="index" v-model="topRightInBtn"> 首页</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="3" value="mine" v-model="itemList"> 我的</label>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="3" value="mine" v-model="topRightInBtn"> 我的</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="4" value="fitting" v-model="itemList"> 试衣秀</label>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="4" value="fitting" v-model="topRightInBtn"> 试衣秀</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="5" value="tipOff" v-model="itemList"> 举报</label>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="5" value="tipOff" v-model="topRightInBtn"> 举报</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="6" value="share" v-model="itemList"> 分享</label>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" id="6" value="share" v-model="topRightInBtn"> 分享</label>
                                     </div>
                                 </div>
                             </div>
