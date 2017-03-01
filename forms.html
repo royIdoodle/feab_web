@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html style="font-size:75px;">
 <head>
     <title>Feab, Front-End Auto Build,前端代码自动构建</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- jQuery -->
     <!-- lined-icons -->
     <link rel="stylesheet" href="css/icon-font.min.css" type='text/css'/>
+    <link rel="stylesheet" href="css/CMUI.css">
     <!-- //lined-icons -->
     <!-- chart -->
     <script src="js/Chart.js"></script>
@@ -46,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 
-<body class="sticky-header left-side-collapsed" onload="">
+<body class="sticky-header" onload="">
 <section>
     <!-- left side start-->
     <div class="left-side sticky-left-side">
@@ -64,6 +65,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <!--sidebar nav start-->
             <ul class="nav nav-pills nav-stacked custom-nav">
+                <li>
+                    <a href="###" @click="showModelConfig=!showModelConfig">
+                        <i class="lnr lnr-power-switch"></i><span>页面模块配置</span>
+                    </a>
+                </li>
                 <li><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
                 <li class="menu-list">
                     <a href="#"><i class="lnr lnr-cog"></i>
@@ -102,19 +108,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- left side end-->
 
     <!-- main content start-->
-    <div class="main-content">
+    <div class="main-content pos-r">
         <!-- header-starts -->
         <div class="header-section">
-
-            <!--toggle button start-->
             <a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
-            <!--toggle button end-->
-
-            <!--notification menu start -->
-
-            <!--notification menu end -->
         </div>
-        <!-- //header-ends -->
+        <!-- //页面基础设置 -->
         <div id="page-wrapper">
             <div class="graphs">
                 <h3 class="blank1">Feab，代码自动生成工具</h3>
@@ -173,9 +172,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <label><input type="checkbox" checked=""> 左侧 后退按钮</label>
                                     </div>
                                     <div class="checkbox-inline1">
-                                        <label><input type="checkbox" value="message" v-model="topRightBtn"> 右侧 消息按钮</label>
-                                        <label><input type="checkbox" value="shoppingCart" v-model="topRightBtn"> 右侧 购物车</label>
-                                        <label><input type="checkbox" value="menuControl" v-model="topRightBtn"> 右侧 More</label>
+                                        <label><input type="checkbox" checked=""> 右侧 消息按钮</label>
+                                        <label><input type="checkbox" checked=""> 右侧 More</label>
                                     </div>
                                 </div>
                             </div>
@@ -251,6 +249,87 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 页面模块设置 -->
+        <style>
+            #pageModleConfig{
+                top:-50px;background-color: rgba(0,0,0,.8);z-index: 101
+            }
+            #iphone{
+                background:url('images/iphone7_g.png');
+                background-size: 100% 100%;
+                width:433px;
+                height:884px;
+                padding:107px 29px 110px 28px;
+                overflow: auto;
+            }
+            .customPhoneModel{
+                min-height: 50px;
+                margin-top: 10px;
+                background-color: #00BCD4;
+                line-height: 50px;
+                font-size: 20px;
+                color: white;
+                text-align: center;
+            }
+            #phoneModelConfig{
+                background-color: white
+
+            }
+        </style>
+        <div class="abs-bottom flex-container paddingh50" id="pageModleConfig" v-show="showModelConfig">
+            <div id="iphone" class="an an-left">
+                <!-- head组件 -->
+                <div style="height:44px;background-color: #f8f8f8;">
+                    <div class="span3">
+                       <i class="icon icon-back" style=" height: 44px; width: 44px; color: #999; font-size: 24px; line-height: 44px;"></i> 
+                    </div>
+                    <div class="span6 fs-18 text-green text-center" style="line-height: 44px;">
+                        天狗网
+                    </div>
+                    <div class="span3">
+                        <i class="icon icon-cart marginr10" style="font-size: 24px;color:#999;line-height: 44px;"></i>
+                        <i class="icon icon-more" style="font-size: 24px;color:#999;line-height: 44px;"></i>
+                    </div>
+                </div>
+                <!-- 自定义区域 -->
+                    <div class="customPhoneModel" @click="configModel(item)" v-for="item in customModels" v-text="item.title"></div>
+                <!-- 添加区域 -->
+                <div @click="addPhoneModel" class="customPhoneModel">
+                    添加模块
+                </div>
+            </div>
+            <!-- 自定义区域配置 -->
+            <div id="phoneModelConfig" class="flex1 marginl50 an an-right" v-show="phoneModelConfig.show">
+                <p style="background-color: #00BCD4" class="lh-40 fs-20 paddingh20 text-white">模块属性配置</p>
+                <div class="padding20 bg-white">
+                    <div class="paddingb20">
+                        <div class="form">
+                            <input type="text" placeholder="请输入该模块名称" v-model="phoneModelConfig.item.title">     
+                        </div>
+                    </div>
+                    <div class="flex-container">
+                        <a href="###" class="btn orange flex1 reverse marginh20" style="display: block" @click="configModelOK">确定</a>
+                        <a href="###" class="btn orange flex1 reverse marginh20" style="display: block" @click="configModelCancel">取消</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!--footer section start-->
     <footer>
