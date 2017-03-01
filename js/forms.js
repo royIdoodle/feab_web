@@ -21,10 +21,12 @@ $('document').ready(function(){
                 isAppShare: false,
                 itemList:[],
                 downloadLink:'',
+                topRightBtn:['shoppingCart','menuControl'],     //右上角外露按钮列表
                 listCom:[]
             },
             watch: {
                 itemList: function(e){
+
 
                 },
                 filePath: function(val){
@@ -70,6 +72,7 @@ $('document').ready(function(){
                         isAppShare: that.$data.isAppShare,
                         comp: that.$data.comp,
                         listCom: that.$data.listCom,
+                        topRightBtn: that.$data.topRightBtn,
                         itemList: that.$data.itemList
                     };
                     console.log('--------submit---------');
