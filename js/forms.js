@@ -89,7 +89,6 @@ $('document').ready(function(){
                                 window.open('http://10.13.1.49:8082/download?fileName='+data.fileName)
 
                             },500)
-                            //history.replaceState(false, document.title,'http://10.13.1.49:8082/download?fileName='+data.fileName)
                         }
                     });
                 }
