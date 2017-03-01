@@ -117,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- //header-ends -->
         <div id="page-wrapper">
             <div class="graphs">
-                <h3 class="blank1">Feab，代码自动生成工具工工</h3>
+                <h3 class="blank1">Feab，代码自动生成工具</h3>
                 <div class="tab-content">
                     <div class="tab-pane active" id="horizontal-form">
                         <form class="form-horizontal">
@@ -173,8 +173,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <label><input type="checkbox" checked=""> 左侧 后退按钮</label>
                                     </div>
                                     <div class="checkbox-inline1">
-                                        <label><input type="checkbox" checked=""> 右侧 消息按钮</label>
-                                        <label><input type="checkbox" checked=""> 右侧 More</label>
+                                        <label><input type="checkbox" value="message" v-model="topRightBtn"> 右侧 消息按钮</label>
+                                        <label><input type="checkbox" value="shoppingCart" v-model="topRightBtn"> 右侧 购物车</label>
+                                        <label><input type="checkbox" value="menuControl" v-model="topRightBtn"> 右侧 More</label>
                                     </div>
                                 </div>
                             </div>
