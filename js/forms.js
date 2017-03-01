@@ -10,7 +10,6 @@ $('document').ready(function(){
             showModelConfig:false,
             phoneModelConfig:{
                 show:false,
-                title:'',
                 item:null
             },
             customModels:[],
@@ -107,6 +106,7 @@ $('document').ready(function(){
             },
             configModelOK:function(){
                 this.phoneModelConfig.show=false;
+                
             },
             configModelCancel:function(){
                 this.phoneModelConfig.show=false;
