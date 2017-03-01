@@ -10,7 +10,8 @@ $('document').ready(function(){
             showModelConfig:false,
             phoneModelConfig:{
                 show:false,
-                title:''
+                title:'',
+                item:null
             },
             customModels:[],
             title:'',
@@ -98,11 +99,11 @@ $('document').ready(function(){
             },
             addPhoneModel:function(e){
                 var len=this.customModels.length;
-                this.customModels.push({title:123})
+                this.customModels.push({title:Math.random().toString(36).substr(2,5)})
             },
             configModel:function(item){
                 this.phoneModelConfig.show=true;
-                this.phoneModelConfig.title=item.title
+                this.phoneModelConfig.item=item
             },
             configModelOK:function(){
                 this.phoneModelConfig.show=false;
