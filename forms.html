@@ -169,10 +169,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <label for="checkbox" class="col-sm-2 control-label">头部设置</label>
                                 <div class="col-sm-8">
                                     <div class="checkbox-inline1">
-                                        <label><input type="checkbox" checked=""> 左侧 后退按钮</label>
+                                        <label><input disabled type="checkbox" checked=""> 左侧 后退按钮</label>
                                     </div>
                                     <div class="checkbox-inline1">
-                                        <label><input type="checkbox" value="shoppingCart" v-model="topRightOutBtn"> 右侧 消息按钮</label>
+                                        <label><input type="checkbox" value="message" v-model="topRightOutBtn"> 右侧 消息按钮</label>
+                                        <label><input type="checkbox" value="shoppingCart" v-model="topRightOutBtn"> 右侧 购物车</label>
                                         <label><input type="checkbox" value="menuControl" v-model="topRightOutBtn"> 右侧 More</label>
                                     </div>
                                 </div>
@@ -181,17 +182,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="form-group">
                                 <label for="checkbox" class="col-sm-2 control-label">More菜单定制</label>
                                 <div class="col-sm-8">
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="1" value="message" v-model="topRightInBtn"> 消息</label>
+                                    <div class="checkbox-inline1">
+                                        <label v-if="topRightOutBtn.indexOf('menuControl')>0"><input type="checkbox" value="message" v-model="topRightInBtn"> 消息</label>
+                                        <label v-if="!(topRightOutBtn.indexOf('menuControl')>0)"><input disabled type="checkbox" value="message" v-model="topRightInBtn"> 消息</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="2" value="index" v-model="topRightInBtn"> 首页</label>
+                                    <div class="checkbox-inline1">
+                                        <label v-if="topRightOutBtn.indexOf('menuControl')>0"><input type="checkbox" value="index" v-model="topRightInBtn"> 首页</label>
+                                        <label v-if="!(topRightOutBtn.indexOf('menuControl')>0)"><input disabled type="checkbox" value="index" v-model="topRightInBtn"> 首页</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="3" value="mine" v-model="topRightInBtn"> 我的</label>
+                                    <div class="checkbox-inline1">
+                                        <label v-if="topRightOutBtn.indexOf('menuControl')>0"><input type="checkbox" value="mine" v-model="topRightInBtn"> 我的</label>
+                                        <label v-if="!(topRightOutBtn.indexOf('menuControl')>0)"><input disabled type="checkbox" value="mine" v-model="topRightInBtn"> 我的</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="4" value="fitting" v-model="topRightInBtn"> 试衣秀</label>
+                                    <div class="checkbox-inline1">
+                                        <label v-if="topRightOutBtn.indexOf('menuControl')>0"><input type="checkbox" value="fitting" v-model="topRightInBtn"> 试衣秀</label>
+                                        <label v-if="!(topRightOutBtn.indexOf('menuControl')>0)"><input disabled type="checkbox" value="fitting" v-model="topRightInBtn"> 试衣秀</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="5" value="tipOff" v-model="topRightInBtn"> 举报</label>
+                                    <div class="checkbox-inline1">
+                                        <label v-if="topRightOutBtn.indexOf('menuControl')>0"><input type="checkbox" value="tipOff" v-model="topRightInBtn"> 举报</label>
+                                        <label v-if="!(topRightOutBtn.indexOf('menuControl')>0)"><input disabled type="checkbox" value="tipOff" v-model="topRightInBtn"> 举报</label>
                                     </div>
-                                    <div class="checkbox-inline1"><label><input type="checkbox" id="6" value="share" v-model="topRightInBtn"> 分享</label>
+                                    <div class="checkbox-inline1">
+                                        <label v-if="topRightOutBtn.indexOf('menuControl')>0"><input type="checkbox" value="share" v-model="topRightInBtn"> 分享</label>
+                                        <label v-if="!(topRightOutBtn.indexOf('menuControl')>0)"><input disabled type="checkbox" value="share" v-model="topRightInBtn"> 分享</label>
                                     </div>
                                 </div>
                             </div>
@@ -294,15 +307,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="abs-bottom flex-container paddingh50" id="pageModleConfig" v-show="showModelConfig">
             <div id="iphone" class="an an-left">
                 <!-- head组件 -->
-                <div style="height:44px;background-color: #f8f8f8;">
+                <div v-if="appHead" style="height:44px;background-color: #f8f8f8;">
                     <div class="span3">
                        <i class="icon icon-back" style=" height: 44px; width: 44px; color: #999; font-size: 24px; line-height: 44px;"></i> 
                     </div>
-                    <div class="span6 fs-18 text-green text-center" style="line-height: 44px;">
+                    <div class="span6 fs-18 text-green text-center" style="line-height: 44px;" v-text="title">
                         天狗网
                     </div>
                     <div class="span3">
-                        <i class="icon icon-cart marginr10" style="font-size: 24px;color:#999;line-height: 44px;"></i>
+                        <i v-show="topRightOutBtn.indexOf('shoppingCart')>0" class="icon icon-cart marginr10" style="font-size: 24px;color:#999;line-height: 44px;"></i>
                         <i class="icon icon-more" style="font-size: 24px;color:#999;line-height: 44px;"></i>
                     </div>
                 </div>

@@ -21,9 +21,10 @@ $('document').ready(function(){
             filePath: '',
             midway: '',
             comp :'head',
+            appHead : true,
             isWcShare: false,
             isAppShare: false,
-            topRightOutBtn:['menuControl'],    //右上角外露按钮列表
+            topRightOutBtn:['shoppingCart', 'menuControl'],    //右上角外露按钮列表
             topRightInBtn:['message','index'],
             downloadLink:'',
             listCom:[]          //列表组件
@@ -31,6 +32,18 @@ $('document').ready(function(){
         watch: {
             topRightInBtn: function(e){
 
+            },
+            comp: function(val){
+                if(val && val.length && (val.some(function(i){return i==='head'}))){
+                    this.appHead = true;
+                }else{
+                    this.appHead = false;
+                }
+            },
+            topRightOutBtn: function(val){
+                if(!val['menuControl']){
+                    this.topRightInBtn = [];
+                }
             },
             filePath: function(val){
                 if(!this.$data.midway){
@@ -75,6 +88,7 @@ $('document').ready(function(){
                     isAppShare: that.$data.isAppShare,
                     comp: that.$data.comp,
                     listCom: that.$data.listCom,
+                    customModels: that.$data.customModels,
                     topRightOutBtn: that.$data.topRightOutBtn,
                     topRightInBtn: that.$data.topRightInBtn
                 };
@@ -95,7 +109,7 @@ $('document').ready(function(){
             },
             addPhoneModel:function(e){
                 var len=this.customModels.length;
-                this.customModels.push({title:Math.random().toString(36).substr(2,5)})
+                this.customModels.push({title:'点击输入模块名'})
             },
             configModel:function(item){
                 this.phoneModelConfig.show=true;
